@@ -39,7 +39,7 @@ class Ui_Form(object):
         self.pushButton.setMaximumSize(QtCore.QSize(50, 50))
         self.pushButton.setObjectName("pushButton")
         self.gridLayout.addWidget(self.pushButton, 2, 0, 1, 1)
-        self.yzm_label = QtWidgets.QLabel(self.widget)
+        self.yzm_label = SzLabel(self.widget)
         self.yzm_label.setMinimumSize(QtCore.QSize(293, 190))
         self.yzm_label.setMaximumSize(QtCore.QSize(293, 190))
         self.yzm_label.setStyleSheet("background-color: rgb(170, 255, 127);")
@@ -72,3 +72,4 @@ class Ui_Form(object):
         self.pushButton_2.setText(_translate("Form", "识别"))
         self.pushButton_3.setText(_translate("Form", "登录"))
 
+from Sz_Label import SzLabel

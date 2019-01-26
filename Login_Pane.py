@@ -7,6 +7,7 @@ class LoginPane(QWidget, Ui_Form):
     def __init__(self, parent=None, *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
         self.setupUi(self)
+        self.refresh_yzm()
 
     def refresh_yzm(self):
         print("刷新验证码")
@@ -21,6 +22,16 @@ class LoginPane(QWidget, Ui_Form):
 
     def check_login(self):
         print("验证登录")
+
+        result = self.yzm_label.get_result()
+        print(result)
+
+        if APITool.check_yzm(result):
+            print("验证码正确")
+        else:
+            print("验证码错误")
+            self.yzm_label.clear_points()
+            self.refresh_yzm()
 
 if __name__ == '__main__':
     import sys

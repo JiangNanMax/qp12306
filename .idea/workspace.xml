@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="618480df-9508-43a5-a322-321291b87725" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Sz_Label.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/YDMHTTP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/API_Tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/API/API_Tool.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/yzm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/API/yzm.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login_Pane.py" beforeDir="false" afterPath="$PROJECT_DIR$/Login_Pane.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/login_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/resource/login_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/ui/login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/resource/ui/login.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sz_Label.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sz_Label.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,7 +16,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/qp12306$Login_Pane.coverage" NAME="Login_Pane Coverage Results" MODIFIED="1548427836879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/qp12306$YDMHTTP.coverage" NAME="YDMHTTP Coverage Results" MODIFIED="1548508604862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/API" />
+    <SUITE FILE_PATH="coverage/qp12306$Login_Pane.coverage" NAME="Login_Pane Coverage Results" MODIFIED="1548509958158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/qp12306$test.coverage" NAME="test Coverage Results" MODIFIED="1548393779921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/qp12306$API_Tool.coverage" NAME="API_Tool Coverage Results" MODIFIED="1548402074818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/API" />
     <SUITE FILE_PATH="coverage/qp12306$login.coverage" NAME="login Coverage Results" MODIFIED="1548393799890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/resource/ui" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="API_Tool.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/API/API_Tool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="136">
+              <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -40,8 +39,8 @@
       <file leaf-file-name="Login_Pane.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Login_Pane.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+            <state relative-caret-position="392">
+              <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -52,8 +51,8 @@
       <file leaf-file-name="Sz_Label.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sz_Label.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="448">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -79,8 +78,9 @@
         <option value="$PROJECT_DIR$/resource/ui/login_ui.py" />
         <option value="$PROJECT_DIR$/SzLabel.py" />
         <option value="$PROJECT_DIR$/API/API_Tool.py" />
-        <option value="$PROJECT_DIR$/Login_Pane.py" />
+        <option value="$PROJECT_DIR$/API/YDMHTTP.py" />
         <option value="$PROJECT_DIR$/Sz_Label.py" />
+        <option value="$PROJECT_DIR$/Login_Pane.py" />
       </list>
     </option>
   </component>
@@ -107,7 +107,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -118,12 +117,18 @@
             <path>
               <item name="qp12306" type="b2602c69:ProjectViewProjectNode" />
               <item name="qp12306" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qp12306" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qp12306" type="462c0819:PsiDirectoryNode" />
               <item name="resource" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -134,6 +139,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\13210\Desktop\qp12306\API" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\13210\Desktop\qp12306\resource" />
     </key>
@@ -189,6 +197,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="YDMHTTP" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="qp12306" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/API" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/API/YDMHTTP.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="login" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="qp12306" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -232,10 +259,12 @@
       <item itemvalue="Python.login" />
       <item itemvalue="Python.Login_Pane" />
       <item itemvalue="Python.API_Tool" />
+      <item itemvalue="Python.YDMHTTP" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Login_Pane" />
+        <item itemvalue="Python.YDMHTTP" />
         <item itemvalue="Python.API_Tool" />
         <item itemvalue="Python.login" />
         <item itemvalue="Python.test" />
@@ -265,10 +294,9 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3281471" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32909605" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1930295" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19571045" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -279,6 +307,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +317,33 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/API/API_Tool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1120">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sz_Label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Login_Pane.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Pipfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -352,22 +408,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yzm.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/API/yzm.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/API/API_Tool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/yzm.jpg" />
     <entry file="file://$PROJECT_DIR$/resource/login_ui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -375,17 +416,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/API/yzm.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/API_Tool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Sz_Label.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        <state relative-caret-position="448">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/YDMHTTP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="83" column="38" lean-forward="true" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Login_Pane.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        <state relative-caret-position="392">
+          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>

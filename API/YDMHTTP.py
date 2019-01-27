@@ -87,7 +87,12 @@ class YDMHttp:
 
         # 开始识别，图片路径，验证码类型ID，超时时间（秒），识别结果
         cid, result = self.decode(yzm_url, 6701, 60)
-        print('cid: %s, result: %s' % (cid, result))
+        #print('cid: %s, result: %s' % (cid, result))
+
+        try:
+            int(result)
+        except:
+            return "0"
 
         return result
 

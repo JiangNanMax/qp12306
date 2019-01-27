@@ -34,6 +34,9 @@ class SzLabel(QLabel):
         super().mousePressEvent(evt)
         #print(evt.pos())
 
+        if evt.x() < 0 or evt.y() <= 30:
+            return None
+
         self.create_point_btn(evt.pos() - QPoint(10, 10))
 
     def create_point_btn(self, pt):

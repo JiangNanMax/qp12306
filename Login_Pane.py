@@ -26,7 +26,10 @@ class LoginPane(QWidget, Ui_Form):
         dm = YDMHttp()
         result = dm.get_yzm_result(self.current_yzm_url)
         #print(result)
-        self.yzm_label.auto_add_point(result)
+        if result != "0":
+            self.yzm_label.auto_add_point(result)
+        else:
+            print("识别失败！")
 
     def check_login(self):
         print("验证登录")

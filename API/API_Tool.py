@@ -12,6 +12,10 @@ class API(object):
     # 验证码验证 POST
     CHECK_YZM_URL = "https://kyfw.12306.cn/passport/captcha/captcha-check"
 
+    # 登录验证 POST
+    CHECK_ACCOUNT_PWD = "https://kyfw.12306.cn/passport/web/login"
+
+
 
 
 class APITool(QObject):
@@ -40,6 +44,17 @@ class APITool(QObject):
         dic = response.json()
         return dic["result_code"] == "4"
 
+    @classmethod
+    def check_account_pwd(cls, account, pwd):
+
+        data_dic = {
+            "username": account,
+            "password": pwd,
+            "appid": "otn"
+        }
+        response = cls.session.post(API.CHECK_ACCOUNT_PWD, data=data_dic)
+        dic = response.json()
+        print(dic)
 
 
 if __name__ == '__main__':

@@ -37,12 +37,35 @@ class LoginPane(QWidget, Ui_Form):
         result = self.yzm_label.get_result()
         print(result)
 
+        if len(result) == 0:
+            print("请填写验证码！")
+            return None
+
         if APITool.check_yzm(result):
             print("验证码正确")
+
+            # 拿到账号和密码
+            account = self.account_le.text()
+            pwd = self.pwd_le.text()
+
+            print(account, pwd)
+            APITool.check_account_pwd(account, pwd)
+
         else:
             print("验证码错误")
             self.yzm_label.clear_points()
             self.refresh_yzm()
+
+    def auto_enable_login_btn(self):
+        print("设置登录按钮为有效")
+        account = self.account_le.text()
+        pwd = self.pwd_le.text()
+
+        if len(account) == 0 or len(pwd) == 0:
+            self.login_btn.setEnabled(False)
+        else:
+            self.login_btn.setEnabled(True)
+
 
 if __name__ == '__main__':
     import sys

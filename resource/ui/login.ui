@@ -140,7 +140,10 @@
        </widget>
       </item>
       <item row="4" column="0" colspan="2">
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="login_btn">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -199,7 +202,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_3</sender>
+   <sender>login_btn</sender>
    <signal>clicked()</signal>
    <receiver>Form</receiver>
    <slot>check_login()</slot>
@@ -214,10 +217,43 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>account_le</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>auto_enable_login_btn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>121</x>
+     <y>79</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>21</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pwd_le</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>auto_enable_login_btn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>147</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>16</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>refresh_yzm()</slot>
   <slot>auto_dm()</slot>
   <slot>check_login()</slot>
+  <slot>auto_enable_login_btn()</slot>
  </slots>
 </ui>

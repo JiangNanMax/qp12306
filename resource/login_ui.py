@@ -50,16 +50,19 @@ class Ui_Form(object):
         self.pushButton_2.setMaximumSize(QtCore.QSize(50, 50))
         self.pushButton_2.setObjectName("pushButton_2")
         self.gridLayout.addWidget(self.pushButton_2, 3, 0, 1, 1)
-        self.pushButton_3 = QtWidgets.QPushButton(self.widget)
-        self.pushButton_3.setMinimumSize(QtCore.QSize(0, 50))
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.gridLayout.addWidget(self.pushButton_3, 4, 0, 1, 2)
+        self.login_btn = QtWidgets.QPushButton(self.widget)
+        self.login_btn.setEnabled(False)
+        self.login_btn.setMinimumSize(QtCore.QSize(0, 50))
+        self.login_btn.setObjectName("login_btn")
+        self.gridLayout.addWidget(self.login_btn, 4, 0, 1, 2)
         self.horizontalLayout.addWidget(self.widget)
 
         self.retranslateUi(Form)
         self.pushButton.clicked.connect(Form.refresh_yzm)
         self.pushButton_2.clicked.connect(Form.auto_dm)
-        self.pushButton_3.clicked.connect(Form.check_login)
+        self.login_btn.clicked.connect(Form.check_login)
+        self.account_le.textChanged['QString'].connect(Form.auto_enable_login_btn)
+        self.pwd_le.textChanged['QString'].connect(Form.auto_enable_login_btn)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -70,6 +73,6 @@ class Ui_Form(object):
         self.pushButton.setText(_translate("Form", "刷新"))
         self.yzm_label.setText(_translate("Form", "验证码"))
         self.pushButton_2.setText(_translate("Form", "识别"))
-        self.pushButton_3.setText(_translate("Form", "登录"))
+        self.login_btn.setText(_translate("Form", "登录"))
 
 from Sz_Label import SzLabel

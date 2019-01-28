@@ -72,7 +72,9 @@ class APITool(QObject):
 
         if result_code == 0:
             cls.author()
-
+            return cls.get_hello()
+        else:
+            return None
 
         #cls.get_hello()
 
@@ -91,12 +93,15 @@ class APITool(QObject):
 
         #cls.get_hello()
 
-
-
     @classmethod
     def get_hello(cls):
         response = cls.session.post(API.HELLO_URL)
-        print(response.text)
+        dic = response.json()
+
+        if dic["httpstatus"] == 200:
+            return dic["data"]["user_name"] + dic["data"]["user_regard"]
+
+        return None
 
 
 if __name__ == '__main__':

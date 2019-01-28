@@ -48,7 +48,7 @@ class LoginPane(QWidget, Ui_Form):
             account = self.account_le.text()
             pwd = self.pwd_le.text()
 
-            print(account, pwd)
+            #print(account, pwd)
             APITool.check_account_pwd(account, pwd)
 
         else:

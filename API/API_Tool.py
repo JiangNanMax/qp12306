@@ -15,6 +15,16 @@ class API(object):
     # 登录验证 POST
     CHECK_ACCOUNT_PWD = "https://kyfw.12306.cn/passport/web/login"
 
+    # 问好信息 POST
+    HELLO_URL = "https://kyfw.12306.cn/otn/index/initMy12306Api"
+
+    # uamtk POST
+    # appid : otn
+    UAMTK_URL = "https://kyfw.12306.cn/passport/web/auth/uamtk"
+
+    # author_client POST
+    # tk :
+    AUTHOR_URL = "https://kyfw.12306.cn/otn/uamauthclient"
 
 
 
@@ -53,8 +63,40 @@ class APITool(QObject):
             "appid": "otn"
         }
         response = cls.session.post(API.CHECK_ACCOUNT_PWD, data=data_dic)
-        dic = response.json()
-        print(dic)
+        #dic = response.json()
+        #print(dic)
+
+        result_code = response.json()["result_code"]
+
+        #print(cls.session.cookies)
+
+        if result_code == 0:
+            cls.author()
+
+
+        #cls.get_hello()
+
+    @classmethod
+    def author(cls):
+        response = cls.session.post(API.UAMTK_URL, data={"appid" : "otn"})
+        newapptk = response.json()["newapptk"]
+
+        #print(response.text)
+        #print(cls.session.cookies)
+
+        response = cls.session.post(API.AUTHOR_URL, data={"tk" : newapptk})
+
+        #print(response.text)
+        #print(cls.session.cookies)
+
+        #cls.get_hello()
+
+
+
+    @classmethod
+    def get_hello(cls):
+        response = cls.session.post(API.HELLO_URL)
+        print(response.text)
 
 
 if __name__ == '__main__':

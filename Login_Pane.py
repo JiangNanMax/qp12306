@@ -5,6 +5,9 @@ from API.API_Tool import APITool
 from API.YDMHTTP import YDMHttp
 
 class LoginPane(QWidget, Ui_Form):
+
+    success_login = pyqtSignal(str)
+
     def __init__(self, parent=None, *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
         self.setupUi(self)
@@ -50,7 +53,9 @@ class LoginPane(QWidget, Ui_Form):
 
             #print(account, pwd)
             result_str = APITool.check_account_pwd(account, pwd)
-            print(result_str)
+            #print(result_str)
+
+            self.success_login.emit(result_str)
 
         else:
             print("验证码错误")

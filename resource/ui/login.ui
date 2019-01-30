@@ -113,15 +113,18 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(170, 255, 127);</string>
+         <string notr="true">background-color: rgb(85, 255, 255);</string>
         </property>
         <property name="text">
-         <string>验证码</string>
+         <string>           正在下载验证码...</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::PlainText</enum>
         </property>
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="auto_dm_btn">
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -186,7 +189,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_2</sender>
+   <sender>auto_dm_btn</sender>
    <signal>clicked()</signal>
    <receiver>Form</receiver>
    <slot>auto_dm()</slot>

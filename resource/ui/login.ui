@@ -83,14 +83,14 @@
        <widget class="QPushButton" name="pushButton">
         <property name="minimumSize">
          <size>
-          <width>50</width>
-          <height>50</height>
+          <width>80</width>
+          <height>80</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>50</height>
+          <width>80</width>
+          <height>80</height>
          </size>
         </property>
         <property name="text">
@@ -98,7 +98,7 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="1" rowspan="2">
+      <item row="2" column="1">
        <widget class="SzLabel" name="yzm_label">
         <property name="minimumSize">
          <size>
@@ -123,26 +123,7 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="auto_dm_btn">
-        <property name="minimumSize">
-         <size>
-          <width>50</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>50</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>识别</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0" colspan="2">
+      <item row="3" column="0" colspan="2">
        <widget class="QPushButton" name="login_btn">
         <property name="enabled">
          <bool>false</bool>
@@ -185,22 +166,6 @@
     <hint type="destinationlabel">
      <x>26</x>
      <y>227</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>auto_dm_btn</sender>
-   <signal>clicked()</signal>
-   <receiver>Form</receiver>
-   <slot>auto_dm()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>142</x>
-     <y>335</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>330</y>
     </hint>
    </hints>
   </connection>

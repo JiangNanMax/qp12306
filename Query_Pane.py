@@ -10,4 +10,11 @@ class QueryPane(QWidget, Ui_Form):
 
 
 if __name__ == '__main__':
-    pass
+    import sys
+
+    app = QApplication(sys.argv)
+
+    window = QueryPane()
+    window.show()
+
+    sys.exit(app.exec())

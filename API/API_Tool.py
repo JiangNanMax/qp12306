@@ -26,6 +26,9 @@ class API(object):
     # tk :
     AUTHOR_URL = "https://kyfw.12306.cn/otn/uamauthclient"
 
+    # 获取所有的城市站点 GET
+    STATIONS_URL = ""
+
 
 
 class APITool(QObject):
@@ -102,6 +105,10 @@ class APITool(QObject):
             return dic["data"]["user_name"] + dic["data"]["user_regard"]
 
         return None
+
+    @classmethod
+    def get_all_stations(cls):
+        pass
 
 
 if __name__ == '__main__':

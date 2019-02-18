@@ -27,7 +27,7 @@ class API(object):
     AUTHOR_URL = "https://kyfw.12306.cn/otn/uamauthclient"
 
     # 获取所有的城市站点 GET
-    STATIONS_URL = ""
+    STATIONS_URL = "https://kyfw.12306.cn/otn/resources/js/framework/station_name.js?station_version=1.9093"
 
 
 
@@ -106,10 +106,27 @@ class APITool(QObject):
 
         return None
 
-    @classmethod
-    def get_all_stations(cls):
-        pass
+    @staticmethod
+    def get_all_stations():
+        station_dic = {}
+
+        response = requests.get(API.STATIONS_URL)
+        #print(response.text)
+        items =response.text.split("@")
+        for item in items:
+            station_list = item.split("|")
+
+            if len(station_list) != 6:
+                continue
+
+            #print(station_list)
+
+            station_name = station_list[1]
+            station_code = station_list[2]
+            station_dic[station_name] = station_code
+
+        print(station_dic)
 
 
 if __name__ == '__main__':
-    APITool.download_yzm()
+    APITool.get_all_stations()

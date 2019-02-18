@@ -1,5 +1,26 @@
 from PyQt5.Qt import *
 import requests
+import os
+import json
+
+
+class Config(object):
+    @staticmethod
+    def get_station_file_path():
+        current_path = os.path.realpath(__file__)
+        current_dir = os.path.split(current_path)[0]
+        station_file_path = current_dir + r"\stations.json"
+        return station_file_path
+
+    @staticmethod
+    def get_yzm_file_path():
+        current_path = os.path.realpath(__file__)
+        current_dir = os.path.split(current_path)[0]
+        #print(current_dir)
+        yzm_file_path = current_dir + r"\yzm.jpg"
+        return yzm_file_path
+
+
 
 class API(object):
 
@@ -30,7 +51,6 @@ class API(object):
     STATIONS_URL = "https://kyfw.12306.cn/otn/resources/js/framework/station_name.js?station_version=1.9093"
 
 
-
 class APITool(QObject):
     session = requests.session()
 
@@ -38,12 +58,13 @@ class APITool(QObject):
     def download_yzm(cls):
         response = cls.session.get(API.GET_YZM_URL)
         #print(response.content)
-        with open("API/yzm.jpg", "wb") as f:
+        yzm_file_path = Config.get_yzm_file_path()
+        with open(yzm_file_path, "wb") as f:
             f.write(response.content)
 
         #print(cls.session.cookies)
 
-        return "API/yzm.jpg"
+        return yzm_file_path
 
     @classmethod
     def check_yzm(cls, yzm):
@@ -108,25 +129,41 @@ class APITool(QObject):
 
     @staticmethod
     def get_all_stations():
-        station_dic = {}
+        # 1 检查本地是否有该信息的缓存
 
-        response = requests.get(API.STATIONS_URL)
-        #print(response.text)
-        items =response.text.split("@")
-        for item in items:
-            station_list = item.split("|")
+            # 1.1 有 直接从本地加载
+        if os.path.exists(Config.get_station_file_path()):
+            print("读取缓存")
+            with open(Config.get_station_file_path(), "r", encoding="utf-8") as f:
+                stations = json.loads(f.read(), encoding="utf-8")
+            #print(stations)
+            return stations
+        else:
+            # 1.2 没有 从网络请求，并缓存到本地
+            print("从网络请求")
+            station_dic = {}
+            response = requests.get(API.STATIONS_URL)
+            #print(response.text)
+            items =response.text.split("@")
+            for item in items:
+                station_list = item.split("|")
 
-            if len(station_list) != 6:
-                continue
+                if len(station_list) != 6:
+                    continue
 
-            #print(station_list)
+                #print(station_list)
 
-            station_name = station_list[1]
-            station_code = station_list[2]
-            station_dic[station_name] = station_code
+                station_name = station_list[1]
+                station_code = station_list[2]
+                station_dic[station_name] = station_code
 
-        print(station_dic)
+            #print(station_dic)
+            with open(Config.get_station_file_path(), "w", encoding="utf-8") as f:
+                json.dump(station_dic, f)
+
+            return station_dic
 
 
 if __name__ == '__main__':
     APITool.get_all_stations()
+    #Config.get_yzm_file_path()

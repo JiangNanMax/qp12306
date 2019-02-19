@@ -21,7 +21,6 @@ class Config(object):
         return yzm_file_path
 
 
-
 class API(object):
 
     # 下载验证码 GET

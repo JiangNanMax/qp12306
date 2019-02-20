@@ -38,6 +38,15 @@ class QueryPane(QWidget, Ui_Form):
     def query_tickets(self):
         print("查询票")
 
+        start_date = self.start_date_edit.date()
+        print(start_date)
+        station_dic = APITool.get_all_stations()
+        from_station_code = station_dic[self.from_station_cb.currentText()]
+        to_station_code = station_dic[self.to_station_cb.currentText()]
+        print(from_station_code, to_station_code)
+        q_value = self.buttonGroup.checkedButton().property("q_value")
+        print(q_value)
+
 if __name__ == '__main__':
     import sys
 

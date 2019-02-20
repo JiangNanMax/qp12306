@@ -123,17 +123,32 @@
        </widget>
       </item>
       <item row="1" column="3">
-       <widget class="QCheckBox" name="normal_cb">
+       <widget class="QRadioButton" name="normal_cb">
         <property name="text">
          <string>普通</string>
         </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <property name="q_value" stdset="0">
+         <string>ADULT</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
        </widget>
       </item>
       <item row="1" column="4">
-       <widget class="QCheckBox" name="stu_cb">
+       <widget class="QRadioButton" name="stu_cb">
         <property name="text">
          <string>学生</string>
         </property>
+        <property name="q_value" stdset="0">
+         <string>0X00</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
        </widget>
       </item>
      </layout>
@@ -170,4 +185,7 @@
  <slots>
   <slot>query_tickets()</slot>
  </slots>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>

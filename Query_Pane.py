@@ -14,8 +14,8 @@ class QueryPane(QWidget, Ui_Form):
         self.from_station_cb.addItems(station_dic.keys())
         self.to_station_cb.addItems(station_dic.keys())
 
-        completer = QCompleter(station_dic.keys())
-        self.from_station_cb.setCompleter(completer)
+        from_completer = QCompleter(station_dic.keys())
+        self.from_station_cb.setCompleter(from_completer)
 
         def check_data(cb):
             current_station = cb.currentText()
@@ -26,11 +26,17 @@ class QueryPane(QWidget, Ui_Form):
 
         self.from_station_cb.lineEdit().editingFinished.connect(lambda : check_data(self.from_station_cb))
 
-
-        self.to_station_cb.setCompleter(completer)
+        to_completer = QCompleter(station_dic.keys())
+        self.to_station_cb.setCompleter(to_completer)
 
         self.to_station_cb.lineEdit().editingFinished.connect(lambda : check_data(self.to_station_cb))
 
+
+        self.start_date_edit.setDate(QDate.currentDate())
+        self.start_date_edit.setMinimumDate(QDate.currentDate())
+
+    def query_tickets(self):
+        print("查询票")
 
 if __name__ == '__main__':
     import sys

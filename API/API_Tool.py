@@ -170,6 +170,13 @@ class APITool(QObject):
             return station_dic
 
     @staticmethod
+    def get_all_stations_revere():
+        station_dic = APITool.get_all_stations()
+        station_dic_reverse = {value: key for key, value in station_dic.items()}
+        #print(station_dic_reverse)
+        return station_dic_reverse
+
+    @staticmethod
     def query_tickts(train_date, from_station, to_station, purpose_codes):
         query_params = {
             "leftTicketDTO.train_date": train_date,
@@ -179,8 +186,10 @@ class APITool(QObject):
         }
 
         response = requests.get(API.QUERY_TICKETS_URL, params=query_params)
-        print(response.text)
+        #print(response.text)
         result = response.json()
+        code2station = APITool.get_all_stations_revere()
+        trainDicts = []
         if result["httpstatus"] == 200:
             items = result["data"]["result"]
             #print(items)
@@ -193,29 +202,31 @@ class APITool(QObject):
                     trainDict['train_name'] = trainInfo[3] # 车次
                     trainDict['from_station_code'] = trainInfo[6] # 出发地电报码
                     trainDict['to_station_code'] = trainInfo[7] # 到达地电报码
-                    trainDict['from_station_name'] = trainInfo[6] # 出发地名称
-                    trainDict['to_station_name'] = trainInfo[7] # 到达地名称
+                    trainDict['from_station_name'] = code2station[trainInfo[6]] # 出发地名称，通过反转键值取得
+                    trainDict['to_station_name'] = code2station[trainInfo[7]] # 到达地名称，通过反转键值取得
                     trainDict['start_time'] = trainInfo[8] # 出发时间
                     trainDict['arrive_time'] = trainInfo[9] # 到达时间
                     trainDict['total_time'] = trainInfo[10] # 总用时
                     trainDict['left_tickets'] = trainInfo[12] # 余票
                     trainDict['train_date'] = trainInfo[13] # 车辆日期
                     trainDict['train_location'] = trainInfo[15] # P4 暂且不用
-                    trainDict['vip_soft_bed'] = trainInfo[21] #
-                    trainDict['other_seat'] = trainInfo[22] #
-                    trainDict['soft_bed'] = trainInfo[23] #
-                    trainDict['no_seat'] = trainInfo[26] #
-                    trainDict['hard_bed'] = trainInfo[28] #
-                    trainDict['hard_seat'] = trainInfo[29] #
-                    trainDict['second_seat'] = trainInfo[30] #
-                    trainDict['first_seat'] = trainInfo[31] #
+                    trainDict['vip_soft_bed'] = trainInfo[21] # 会员软卧
+                    trainDict['other_seat'] = trainInfo[22] # 其他
+                    trainDict['soft_bed'] = trainInfo[23] # 软卧
+                    trainDict['no_seat'] = trainInfo[26] # 无座
+                    trainDict['hard_bed'] = trainInfo[28] # 硬卧
+                    trainDict['hard_seat'] = trainInfo[29] # 硬座
+                    trainDict['second_seat'] = trainInfo[30] # 二等座
+                    trainDict['first_seat'] = trainInfo[31] # 一等座
                     trainDict['business_seat'] = trainInfo[32] # 商务座
                     trainDict['move_bed'] = trainInfo[33] # 动卧
-
+                trainDicts.append(trainDict)
         else:
             print("数据请求出错!")
-            return None
+
+        return trainDicts, len(trainDicts)
 
 if __name__ == '__main__':
-    APITool.get_all_stations()
+    #APITool.get_all_stations()
     #Config.get_yzm_file_path()
+    APITool.get_all_stations_revere()

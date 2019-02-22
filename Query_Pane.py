@@ -49,7 +49,10 @@ class QueryPane(QWidget, Ui_Form):
         purpose_codes = self.buttonGroup.checkedButton().property("q_value")
         print(purpose_codes)
 
-        APITool.query_tickts(start_date, from_station_code, to_station_code, purpose_codes)
+        result, result_len = APITool.query_tickts(start_date, from_station_code, to_station_code, purpose_codes)
+        print(result_len)
+        for i in result:
+            print(i)
 
 if __name__ == '__main__':
     import sys

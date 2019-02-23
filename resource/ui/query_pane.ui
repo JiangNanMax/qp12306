@@ -157,8 +157,13 @@
    <item>
     <widget class="QWidget" name="widget_2" native="true">
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 170, 127);</string>
+      <string notr="true"/>
      </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QTableView" name="tickets_tv"/>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>

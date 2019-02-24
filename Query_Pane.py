@@ -39,8 +39,8 @@ class QueryPane(QWidget, Ui_Form):
         model = QStandardItemModel(self.tickets_tv)
         # 设置模型的头部数据
         headers = ["车次", "出发站->到达站", "出发时间->到达时间", "历时", "商务座-特等座",
-                   "一等座","二等座", "高级软卧", "软卧-一等卧", "动卧","硬卧",
-                   "二等卧", "软座", "硬座", "无座", "其他"]
+                   "一等座","二等座", "高级软卧", "软卧-一等卧", "动卧","硬卧-二等卧",
+                    "硬座", "无座", "其他"]
         model.setColumnCount(len(headers))
         for idx, header in enumerate(headers):
             model.setHeaderData(idx, Qt.Horizontal, header)
@@ -67,10 +67,19 @@ class QueryPane(QWidget, Ui_Form):
         #    print(i)
 
         model = self.tickets_tv.model()
-        model.setRowCount(len(result))
+        model.setRowCount(result_len)
 
-        for train_dic in result:
-            print(train_dic)
+        cols = ["train_name",("from_station_name","to_station_name"),("start_time","arrive_time"),"total_time","business_seat","first_seat",
+         "second_seat", "vip_soft_bed", "soft_bed", "move_bed", "hard_bed", "hard_seat", "no_seat", "other_seat"]
+
+        for row, train_dic in enumerate(result):
+            #print(train_dic)
+            for col, col_name in enumerate(cols):
+                if type(col_name) == str:
+                    model.setItem(row, col, QStandardItem(train_dic[col_name]))
+                else:
+                    tmp = "->".join([train_dic[key] for key in col_name])
+                    model.setItem(row, col, QStandardItem(tmp))
 
         self.tickets_tv.setModel(model)
 
